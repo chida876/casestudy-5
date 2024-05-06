@@ -24,3 +24,18 @@ This script is designed to start or stop EC2 instances based on the current time
 •	`stop_instances`: If the current time is 21:00, the `stop_instances` function is called to stop the specified EC2 instances.
 
 Overall, this script provides a simple automation mechanism to start or stop EC2 instances based on the time of day, allowing for cost optimization and resource management.
+
+
+
+
+
+# delete_old-snapshot.sh
+
+•	`DAYS_TO_KEEP`: Specifies the number of days to retain snapshots.
+•	VOLUME_ID`: Specifies the volume ID for which snapshots need to be managed.
+•	The `date` command with the `-d` option is used to calculate the cutoff date by subtracting the specified number of days from the current date. The result is formatted as `YYYY-MM-DD` and stored in the `CUTOFF_DATE` variable.
+•	The `aws ec2 describe-snapshots` command retrieves information about snapshots associated with the specified volume ID.
+•	The `--query` parameter filters snapshots based on the cutoff date.
+•	The `--output text` parameter ensures that the output is in text format.
+•	The `xargs` command reads the snapshot IDs from the output and passes them as arguments to the `aws ec2 delete-snapshot` command to delete each snapshot.
+
