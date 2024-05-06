@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Variables
-BUCKET_NAME="your-bucket-name"
+BUCKET_NAME="my-shared-bucket-876"
 IN_FOLDER="input"
 OUT_FOLDER="count"
 FILE="count.txt"
