@@ -2,12 +2,12 @@
 
 # Start EC2 instances
 start_instances() {
-  aws ec2 start-instances --instance-ids your-instance-ids
+  aws ec2 start-instances --instance-ids i-05ff2a36a8baa92c4
 }
 
 # Stop EC2 instances
 stop_instances() {
-  aws ec2 stop-instances --instance-ids your-instance-ids
+  aws ec2 stop-instances --instance-ids i-05ff2a36a8baa92c4
 }
 
 # Check current time
